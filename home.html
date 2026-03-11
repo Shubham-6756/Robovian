@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robovian - Home</title>
+    <meta name="description"
+        content="Build. Learn. Control. Access robotics labs, projects, humanoid systems, and engineering resources.">
+    <!-- Google Fonts: Inter, Poppins, Orbitron -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Orbitron:wght@700;800&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="home.css">
+    <!-- Icons (Lucide) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <!-- Background Effects -->
+    <div class="background-effects">
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+        <div class="circuit-pattern"></div>
+    </div>
+
+    <!-- App Container (Mobile Size for best UI) -->
+    <div class="app-container">
+
+        <!-- Top Bar -->
+        <header class="top-bar">
+            <div class="logo-section">
+                <div class="logo-icon">
+                    <i data-lucide="cpu" class="primary-icon"></i>
+                </div>
+                <h1 class="app-title">Robovian</h1>
+            </div>
+            <div class="header-actions">
+                <button class="icon-btn" aria-label="Notifications">
+                    <i data-lucide="bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+                <div class="profile-avatar">
+                    <img src="https://i.pravatar.cc/150?u=a042581f4e29026704d" alt="Profile">
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Scrollable Content -->
+        <main class="content-scroll">
+
+            <!-- Welcome Section -->
+            <section class="welcome-section">
+                <h2 class="welcome-heading">Welcome Back, <span class="user-name">Alex!</span></h2>
+                <p class="welcome-sub">Build robots, learn AI, and control smart systems from one place</p>
+            </section>
+
+            <!-- Main Hero Card -->
+            <section class="hero-card glass-panel">
+                <div class="hero-content">
+                    <h3 class="hero-title">Start Your Robotics Journey</h3>
+                    <p class="hero-text">Explore beginner to advanced robotics projects, simulations, and AI learning
+                        tools.</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary">Get Started</button>
+                        <button class="btn btn-secondary">Explore Now</button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <i data-lucide="bot" class="hero-bot-icon"></i>
+                </div>
+                <!-- Decorative elements inside hero -->
+                <div class="hero-circuit"></div>
+            </section>
+
+            <!-- Quick Access Grid -->
+            <section class="section-container">
+                <h3 class="section-title">Quick Access</h3>
+                <div class="quick-grid">
+                    <a href="#" class="grid-card glass-panel group">
+                        <div class="icon-wrapper blue"><i data-lucide="book-open"></i></div>
+                        <span>Learn Robotics</span>
+                    </a>
+                    <a href="#" class="grid-card glass-panel group">
+                        <div class="icon-wrapper cyan"><i data-lucide="brain-circuit"></i></div>
+                        <span>AI Projects</span>
+                    </a>
+                    <a href="#" class="grid-card glass-panel group">
+                        <div class="icon-wrapper purple"><i data-lucide="user"></i></div>
+                        <!-- Using user as humanoid proxy -->
+                        <span>Humanoid</span>
+                    </a>
+                    <a href="#" class="grid-card glass-panel group">
+                        <div class="icon-wrapper green"><i data-lucide="monitor-play"></i></div>
+                        <span>Simulator</span>
+                    </a>
+                    <a href="#" class="grid-card glass-panel group">
+                        <div class="icon-wrapper orange"><i data-lucide="joystick"></i></div>
+                        <span>Control Robot</span>
+                    </a>
+                    <a href="#" class="grid-card glass-panel group">
+                        <div class="icon-wrapper white"><i data-lucide="github"></i></div>
+                        <span>GitHub Hub</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Featured Projects (Horizontal Scroll) -->
+            <section class="section-container">
+                <div class="section-header">
+                    <h3 class="section-title">Featured Projects</h3>
+                    <a href="#" class="see-all">See All</a>
+                </div>
+                <div class="horizontal-scroll hide-scrollbar">
+
+                    <div class="project-card glass-panel">
+                        <div class="project-image">
+                            <i data-lucide="car-front"></i>
+                            <span class="difficulty easy">Beginner</span>
+                        </div>
+                        <div class="project-info">
+                            <h4>Line Follower Robot</h4>
+                            <button class="btn-small">Open</button>
+                        </div>
+                    </div>
+
+                    <div class="project-card glass-panel">
+                        <div class="project-image">
+                            <i data-lucide="radar"></i>
+                            <span class="difficulty intermediate">Intermediate</span>
+                        </div>
+                        <div class="project-info">
+                            <h4>Obstacle Avoiding Bot</h4>
+                            <button class="btn-small">Open</button>
+                        </div>
+                    </div>
+
+                    <div class="project-card glass-panel">
+                        <div class="project-image">
+                            <!-- Mechanical arm proxy -->
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-git-merge">
+                                <path d="m8 6 4-4 4 4" />
+                                <path d="M12 2v10.3a4 4 0 0 1-1.172 2.872L4 22" />
+                                <path d="m20 22-5-5" />
+                            </svg>
+                            <span class="difficulty advanced">Advanced</span>
+                        </div>
+                        <div class="project-info">
+                            <h4>Humanoid Arm Control</h4>
+                            <button class="btn-small">Open</button>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Progress Section -->
+            <section class="section-container">
+                <h3 class="section-title">Your Progress</h3>
+                <div class="progress-card glass-panel">
+                    <div class="progress-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">12</span>
+                            <span class="stat-label">Lessons Completed</span>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-value">4</span>
+                            <span class="stat-label">Projects Built</span>
+                        </div>
+                    </div>
+
+                    <div class="progress-bar-container">
+                        <div class="progress-header">
+                            <span>Weekly Target</span>
+                            <span class="target-value">68%</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill" style="width: 68%;"></div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-outline w-full mt-4">Continue Learning</button>
+                </div>
+            </section>
+
+            <!-- Categories Section -->
+            <section class="section-container">
+                <h3 class="section-title">Categories</h3>
+                <div class="categories-container hide-scrollbar">
+                    <div class="category-pill glass-panel">
+                        <i data-lucide="cpu" class="small-icon text-cyan"></i>
+                        <span>Arduino</span>
+                    </div>
+                    <div class="category-pill glass-panel">
+                        <i data-lucide="terminal" class="small-icon text-blue"></i>
+                        <span>Python</span>
+                    </div>
+                    <div class="category-pill glass-panel">
+                        <i data-lucide="radio" class="small-icon text-purple"></i>
+                        <span>Sensors</span>
+                    </div>
+                    <div class="category-pill glass-panel">
+                        <i data-lucide="eye" class="small-icon text-green"></i>
+                        <span>Computer Vision</span>
+                    </div>
+                    <div class="category-pill glass-panel">
+                        <i data-lucide="microchip" class="small-icon text-orange"></i>
+                        <span>Embedded</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Daily Challenge Card -->
+            <section class="section-container">
+                <div class="challenge-card glass-panel">
+                    <div class="challenge-header">
+                        <i data-lucide="zap" class="challenge-icon"></i>
+                        <h4>Today's Challenge</h4>
+                    </div>
+                    <p class="challenge-text">Build a basic LED blinking system using Arduino</p>
+                    <button class="btn btn-primary glow-btn">Try Now</button>
+                </div>
+            </section>
+
+            <!-- Community / Update Section -->
+            <section class="section-container mb-120">
+                <h3 class="section-title">Latest in Robovian</h3>
+                <div class="updates-list">
+                    <div class="update-item glass-panel">
+                        <div class="update-icon new"><i data-lucide="plus"></i></div>
+                        <p class="update-text">New humanoid project added</p>
+                    </div>
+                    <div class="update-item glass-panel">
+                        <div class="update-icon update"><i data-lucide="refresh-cw"></i></div>
+                        <p class="update-text">Python robotics course updated</p>
+                    </div>
+                    <div class="update-item glass-panel">
+                        <div class="update-icon module"><i data-lucide="layers"></i></div>
+                        <p class="update-text">3 new AI modules available</p>
+                    </div>
+                </div>
+            </section>
+
+        </main> <!-- End Scrollable -->
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav glass-panel">
+            <a href="#" class="nav-item active">
+                <i data-lucide="home"></i>
+                <span>Home</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i data-lucide="book-open"></i>
+                <span>Learn</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i data-lucide="folder-grid"></i>
+                <span>Projects</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i data-lucide="gamepad-2"></i>
+                <span>Control</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i data-lucide="user"></i>
+                <span>Profile</span>
+            </a>
+        </nav>
+
+    </div>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+    <script src="home.js"></script>
+</body>
+
+</html>
