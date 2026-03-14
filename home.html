@@ -120,51 +120,56 @@
                             <i data-lucide="lightbulb"></i>
                             <span class="difficulty easy">Beginner</span>
                         </div>
-<div class="project-card glass-panel">
+                        <div class="project-info">
+                            <h4 style="font-size: 0.95rem; line-height: 1.2; margin-bottom: 6px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 2.4em;">1. LED Blinking System</h4>
+                            <p class="project-desc" style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 10px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 2.8em; line-height: 1.4;">Blink an LED using basic microcontroller output control.</p>
+                            <button class="btn-small">Open</button>
+                        </div>
+                    </div>
+                    <div class="project-card glass-panel">
                         <div class="project-image">
                             <i data-lucide="lightbulb"></i>
                             <span class="difficulty easy">Beginner</span>
                         </div>
-<div class="project-card glass-panel">
+                        <div class="project-info">
+                            <h4 style="font-size: 0.95rem; line-height: 1.2; margin-bottom: 6px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 2.4em;">2. Dual LED Pattern Blinker</h4>
+                            <p class="project-desc" style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 10px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 2.8em; line-height: 1.4;">Create alternating light patterns with two LEDs.</p>
+                            <button class="btn-small">Open</button>
+                        </div>
+                    </div>
+                    <div class="project-card glass-panel">
                         <div class="project-image">
                             <i data-lucide="lightbulb"></i>
                             <span class="difficulty easy">Beginner</span>
                         </div>
-<div class="project-card glass-panel">
+                        <div class="project-info">
+                            <h4 style="font-size: 0.95rem; line-height: 1.2; margin-bottom: 6px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 2.4em;">3. RGB LED Color Mixer</h4>
+                            <p class="project-desc" style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 10px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 2.8em; line-height: 1.4;">Mix red, green, and blue to create custom colors.</p>
+                            <button class="btn-small">Open</button>
+                        </div>
+                    </div>
+                    <div class="project-card glass-panel">
                         <div class="project-image">
                             <i data-lucide="lightbulb"></i>
                             <span class="difficulty easy">Beginner</span>
                         </div>
-<div class="project-card glass-panel">
+                        <div class="project-info">
+                            <h4 style="font-size: 0.95rem; line-height: 1.2; margin-bottom: 6px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 2.4em;">Push Button LED Control</h4>
+                            <p class="project-desc" style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 10px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 2.8em; line-height: 1.4;">Turn an LED on and off using a button.</p>
+                            <button class="btn-small">Open</button>
+                        </div>
+                    </div>
+                    <div class="project-card glass-panel">
                         <div class="project-image">
                             <i data-lucide="lightbulb"></i>
                             <span class="difficulty easy">Beginner</span>
                         </div>
-<div class="project-card glass-panel">
-                        <div class="project-image">
-                            <i data-lucide="cpu"></i>
-                            <span class="difficulty easy">Beginner</span>
+                        <div class="project-info">
+                            <h4 style="font-size: 0.95rem; line-height: 1.2; margin-bottom: 6px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 2.4em;">Traffic Light Simulator</h4>
+                            <p class="project-desc" style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 10px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 2.8em; line-height: 1.4;">Build a simple traffic light timing system.</p>
+                            <button class="btn-small">Open</button>
                         </div>
-<div class="project-card glass-panel">
-                        <div class="project-image">
-                            <i data-lucide="lightbulb"></i>
-                            <span class="difficulty easy">Beginner</span>
-                        </div>
-<div class="project-card glass-panel">
-                        <div class="project-image">
-                            <i data-lucide="wifi"></i>
-                            <span class="difficulty easy">Beginner</span>
-                        </div>
-<div class="project-card glass-panel">
-                        <div class="project-image">
-                            <i data-lucide="cpu"></i>
-                            <span class="difficulty easy">Beginner</span>
-                        </div>
-<div class="project-card glass-panel">
-                        <div class="project-image">
-                            <i data-lucide="cpu"></i>
-                            <span class="difficulty easy">Beginner</span>
-                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -288,10 +293,61 @@
         </a>
     </div>
 
+    <!-- Project Options Bottom Sheet Modal -->
+    <div class="modal-overlay" id="projectOptionsOverlay"></div>
+    <div class="bottom-sheet" id="projectOptionsSheet">
+        <div class="sheet-header">
+            <h3 class="sheet-title" id="sheetProjectTitle">Project Title</h3>
+            <button class="close-sheet-btn" id="closeSheetBtn">
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+        <div class="sheet-content" id="sheetOptionsView">
+            <button class="sheet-option-btn glass-panel">
+                <div class="option-icon blue"><i data-lucide="book-open"></i></div>
+                <div class="option-text">
+                    <h4>Syllabus</h4>
+                    <p>View step-by-step learning guide</p>
+                </div>
+                <i data-lucide="chevron-right" class="arrow-icon"></i>
+            </button>
+            <button class="sheet-option-btn glass-panel">
+                <div class="option-icon orange"><i data-lucide="wrench"></i></div>
+                <div class="option-text">
+                    <h4>Tools</h4>
+                    <p>Hardware and software requirements</p>
+                </div>
+                <i data-lucide="chevron-right" class="arrow-icon"></i>
+            </button>
+            <button class="sheet-option-btn glass-panel">
+                <div class="option-icon purple"><i data-lucide="pen-tool"></i></div>
+                <div class="option-text">
+                    <h4>Design</h4>
+                    <p>Circuit diagrams and 3D models</p>
+                </div>
+                <i data-lucide="chevron-right" class="arrow-icon"></i>
+            </button>
+        </div>
+        <div class="sheet-detail-view" id="sheetDetailView" style="display: none; padding: 0 20px 20px 20px; max-height: 400px; overflow-y: auto;">
+            <button class="btn-small" id="sheetBackBtn" style="margin-bottom: 15px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); width: auto; display: inline-flex; align-items: center; justify-content: center; padding: 8px 16px;">
+                <i data-lucide="arrow-left" style="width: 16px; height: 16px; margin-right: 8px;"></i> Back
+            </button>
+            <h4 id="sheetDetailTitle" style="margin-bottom: 15px; color: var(--primary-light); font-size: 1.1rem;">Syllabus</h4>
+            <ul id="sheetDetailList" style="list-style-type: none; padding-left: 0; margin-bottom: 20px;">
+                <!-- list items here -->
+            </ul>
+        </div>
+    </div>
+
     <!-- Initialize Lucide Icons -->
     <script>
         lucide.createIcons();
     </script>
+    <script src="data_1_100.js"></script>
+    <script src="data_101_200.js"></script>
+    <script src="data_201_300.js"></script>
+    <script src="data_301_400.js"></script>
+    <script src="data_401_500.js"></script>
     <script src="home.js"></script>
 </body>
 
