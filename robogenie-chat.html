@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoboGenie - Chat</title>
+    <meta name="description" content="Chat with RoboGenie, your Personal AI Robotics Mentor.">
+    <!-- Google Fonts: Inter, Poppins, Orbitron -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Orbitron:wght@700;800&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="robogenie.css">
+    <link rel="stylesheet" href="robogenie-chat.css">
+    <!-- Icons (Lucide) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="chat-mode">
+    <!-- Background Effects -->
+    <div class="background-effects">
+        <div class="glow glow-1" style="opacity: 0.1;"></div>
+        <div class="glow glow-2" style="opacity: 0.1;"></div>
+        <div class="circuit-pattern"></div>
+    </div>
+
+    <!-- App Container -->
+    <div class="app-container chat-container">
+
+        <!-- Top Bar -->
+        <header class="top-bar chat-header">
+            <button class="icon-btn" aria-label="Go Back" onclick="window.history.back()">
+                <i data-lucide="chevron-left"></i>
+            </button>
+            <div class="header-center chat-header-title">
+                <h1 class="app-title text-center">RoboGenie <i data-lucide="settings"
+                        class="inline-icon text-muted"></i></h1>
+                <p class="header-subtitle">AI Robotics Assistant</p>
+            </div>
+            <div class="header-actions">
+                <div class="profile-avatar">
+                    <img src="assets/robogenie_logo.png" alt="RoboGenie">
+                </div>
+            </div>
+        </header>
+
+        <!-- Suggested Chips (Fixed below header) -->
+        <div class="chips-container hide-scrollbar chat-chips">
+            <span class="chip" onclick="fillInput('Learn Robotics')">Learn Robotics</span>
+            <span class="chip" onclick="fillInput('Beginner Project')">Beginner Project</span>
+            <span class="chip" onclick="fillInput('Fix My Code')">Fix My Code</span>
+            <span class="chip" onclick="fillInput('Arduino Help')">Arduino Help</span>
+            <span class="chip" onclick="fillInput('Humanoid Basics')">Humanoid Basics</span>
+            <span class="chip" onclick="fillInput('AI Roadmap')">AI Roadmap</span>
+        </div>
+
+        <!-- Chat Conversation Area -->
+        <main class="chat-scroll" id="chat-messages">
+            <!-- Welcome Message -->
+            <div class="message-group ai-message-group">
+                <img src="assets/robogenie_logo.png" class="chat-avatar" alt="AI">
+                <div class="message-bubble ai-bubble glass-panel highlight-border">
+                    <p class="mb-1 font-bold text-cyan">Hi, I'm RoboGenie</p>
+                    <p>Ask me anything about AI, robotics, coding, circuits, components, or humanoid systems.</p>
+                </div>
+            </div>
+
+            <!-- Dynamic Messages will be injected here -->
+        </main>
+
+        <!-- Input Area (Fixed at bottom) -->
+        <div class="chat-input-wrapper glass-panel">
+            <div class="chat-input-container">
+                <button class="icon-btn mic-btn">
+                    <i data-lucide="mic"></i>
+                </button>
+                <input type="text" id="chat-input" placeholder="Type your question here..." class="chat-text-input">
+                <button class="icon-btn send-btn" id="send-btn">
+                    <i data-lucide="send"></i>
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+    <script src="robogenie-chat.js"></script>
+</body>
+
+</html>

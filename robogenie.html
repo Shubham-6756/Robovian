@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robovian - RoboGenie AI Mentor</title>
+    <meta name="description"
+        content="RoboGenie - Your Personal AI Robotics Mentor. Learn, build, code, simulate, and control with AI.">
+    <!-- Google Fonts: Inter, Poppins, Orbitron -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Orbitron:wght@700;800&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="robogenie.css">
+    <!-- Icons (Lucide) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <!-- Background Effects -->
+    <div class="background-effects">
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+        <div class="circuit-pattern"></div>
+    </div>
+
+    <!-- App Container -->
+    <div class="app-container">
+
+        <!-- Top Bar -->
+        <header class="top-bar">
+            <button class="icon-btn" aria-label="Go Back" onclick="window.history.back()">
+                <i data-lucide="chevron-left"></i>
+            </button>
+            <div class="header-center">
+                <h1 class="app-title text-center">RoboGenie</h1>
+                <p class="header-subtitle">Your Personal AI Robotics Mentor</p>
+            </div>
+            <div class="header-actions">
+                <button class="icon-btn" aria-label="Notifications">
+                    <i data-lucide="bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+                <div class="profile-avatar">
+                    <img src="https://i.pravatar.cc/150?u=a042581f4e29026704d" alt="Profile">
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Scrollable Content -->
+        <main class="content-scroll">
+
+            <!-- Welcome Section -->
+            <section class="welcome-section text-center">
+                <h2 class="welcome-heading">Hello, <span class="user-name">Shubham</span></h2>
+                <p class="welcome-sub text-lg">What do you want to build or learn today?</p>
+            </section>
+
+            <!-- Main AI Card -->
+            <section class="ai-hero-card glass-panel">
+                <div class="ai-hero-header">
+                    <div class="pulse-ring"></div>
+                    <img src="assets/robogenie_logo.png" alt="RoboGenie Logo" class="ai-hero-icon neon-glow"
+                        style="border-radius: 50%;">
+                </div>
+                <h3 class="hero-title text-center">Talk to RoboGenie</h3>
+                <p class="hero-text text-center">Get instant help with AI, robotics, coding, circuits, components,
+                    humanoids, and project roadmaps.</p>
+                <div class="hero-buttons center-actions">
+                    <a href="robogenie-chat.html" class="btn btn-primary glow-btn"
+                        style="text-decoration: none; display: flex; align-items: center;"><i
+                            data-lucide="message-square" class="btn-icon"></i> Ask
+                        Anything</a>
+                    <a href="robogenie-chat.html" class="btn btn-secondary glow-border"
+                        style="text-decoration: none; display: flex; align-items: center;"><i data-lucide="mic"
+                            class="btn-icon"></i> Start Voice
+                        Chat</a>
+                </div>
+                <div class="search-container mt-4">
+                    <i data-lucide="search" class="search-icon"></i>
+                    <input type="text" id="ai-prompt-input" placeholder="Ask about AI, robotics, Arduino..."
+                        class="ai-input">
+                    <button class="icon-btn send-btn"><i data-lucide="send"></i></button>
+                </div>
+                <!-- Recommended Prompt Chips -->
+                <div class="chips-container hide-scrollbar mt-3">
+                    <span class="chip" onclick="setPrompt('Teach me robotics from zero')">Teach me robotics from
+                        zero</span>
+                    <span class="chip" onclick="setPrompt('Suggest a beginner robot project')">Suggest a beginner
+                        project</span>
+                    <span class="chip" onclick="setPrompt('Fix my Arduino code')">Fix my Arduino code</span>
+                    <span class="chip" onclick="setPrompt('Explain computer vision')">Explain computer vision</span>
+                    <span class="chip" onclick="setPrompt('Make a 3-month roadmap')">Make a 3-month roadmap</span>
+                </div>
+            </section>
+
+            <!-- Category Tabs -->
+            <div class="category-tabs hide-scrollbar">
+                <button class="tab-btn active" onclick="switchTab(this, 'All')">All</button>
+                <button class="tab-btn" onclick="switchTab(this, 'Learn')">Learn</button>
+                <button class="tab-btn" onclick="switchTab(this, 'Projects')">Projects</button>
+                <button class="tab-btn" onclick="switchTab(this, 'Code')">Code</button>
+                <button class="tab-btn" onclick="switchTab(this, 'Components')">Components</button>
+                <button class="tab-btn" onclick="switchTab(this, 'Circuits')">Circuits</button>
+                <button class="tab-btn" onclick="switchTab(this, 'AI')">AI Tools</button>
+                <button class="tab-btn" onclick="switchTab(this, 'Humanoid')">Humanoid</button>
+                <button class="tab-btn" onclick="switchTab(this, 'Roadmaps')">Roadmaps</button>
+                <button class="tab-btn" onclick="switchTab(this, 'Quiz')">Quiz</button>
+            </div>
+
+            <!-- Quick Action Grid -->
+            <section class="section-container">
+                <div class="quick-action-grid">
+                    <div class="action-btn-small glass-panel" onclick="setPrompt('Start Learning')">
+                        <i data-lucide="book" class="text-blue"></i><span>Learn</span>
+                    </div>
+                    <div class="action-btn-small glass-panel" onclick="setPrompt('Suggest a project')">
+                        <i data-lucide="lightbulb" class="text-orange"></i><span>Projects</span>
+                    </div>
+                    <div class="action-btn-small glass-panel" onclick="setPrompt('Fix my code')">
+                        <i data-lucide="code-2" class="text-cyan"></i><span>Fix Code</span>
+                    </div>
+                    <div class="action-btn-small glass-panel" onclick="setPrompt('Choose components')">
+                        <i data-lucide="cpu" class="text-purple"></i><span>Parts</span>
+                    </div>
+                    <div class="action-btn-small glass-panel" onclick="setPrompt('Circuit help')">
+                        <i data-lucide="cable" class="text-green"></i><span>Circuits</span>
+                    </div>
+                    <div class="action-btn-small glass-panel" onclick="setPrompt('Humanoid help')">
+                        <i data-lucide="user" class="text-blue"></i><span>Humanoid</span>
+                    </div>
+                    <div class="action-btn-small glass-panel" onclick="setPrompt('Explore AI Tools')">
+                        <i data-lucide="brain-circuit" class="text-cyan"></i><span>AI Tools</span>
+                    </div>
+                    <div class="action-btn-small glass-panel" onclick="setPrompt('Make a roadmap for me')">
+                        <i data-lucide="map" class="text-orange"></i><span>Roadmap</span>
+                    </div>
+                    <div class="action-btn-small glass-panel" onclick="setPrompt('Give me a quiz')">
+                        <i data-lucide="pen-tool" class="text-purple"></i><span>Quiz</span>
+                    </div>
+                    <div class="action-btn-small glass-panel" onclick="setPrompt('Give me today&apos;s challenge')">
+                        <i data-lucide="zap" class="text-green"></i><span>Challenge</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Progress Panel -->
+            <section class="section-container">
+                <div class="journey-card glass-panel flex-row-between">
+                    <div>
+                        <h4 class="text-pure font-bold mb-1">Your AI Journey</h4>
+                        <p class="text-sm text-muted">Beginner Level &bull; 8 Topics</p>
+                    </div>
+                    <div class="journey-progress text-cyan font-bold text-lg">72%</div>
+                </div>
+            </section>
+
+            </section>
+
+            <!-- Recommended For You Section -->
+            <section class="section-container">
+                <h3 class="section-title">Recommended For You</h3>
+                <div class="horizontal-scroll hide-scrollbar recommended-scroll">
+                    <div class="recommended-card glass-panel" onclick="setPrompt('Start Beginner Robotics Path')">
+                        <div class="rec-icon-wrapper blue"><i data-lucide="map" class="rec-icon"></i></div>
+                        <h5>Beginner Robotics Path</h5>
+                    </div>
+                    <div class="recommended-card glass-panel" onclick="setPrompt('Learn Python for Robotics')">
+                        <div class="rec-icon-wrapper cyan"><i data-lucide="terminal" class="rec-icon"></i></div>
+                        <h5>Python for Robotics</h5>
+                    </div>
+                    <div class="recommended-card glass-panel" onclick="setPrompt('Build Obstacle Avoidance Project')">
+                        <div class="rec-icon-wrapper orange"><i data-lucide="car-front" class="rec-icon"></i></div>
+                        <h5>Obstacle Avoidance Project</h5>
+                    </div>
+                    <div class="recommended-card glass-panel" onclick="setPrompt('Learn Humanoid Basics')">
+                        <div class="rec-icon-wrapper purple"><i data-lucide="user" class="rec-icon"></i></div>
+                        <h5>Humanoid Basics</h5>
+                    </div>
+                    <div class="recommended-card glass-panel" onclick="setPrompt('Start AI Vision Starter Pack')">
+                        <div class="rec-icon-wrapper green"><i data-lucide="eye" class="rec-icon"></i></div>
+                        <h5>AI Vision Starter Pack</h5>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Main Feature Sections List -->
+            <section class="section-container feature-list">
+
+                <div class="feature-card glass-panel">
+                    <div class="feature-icon blue">
+                        <i data-lucide="book-open"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4>Learn AI & Robotics</h4>
+                        <p>Start with Python, Arduino, sensors, AI, ML, CV and ROS.</p>
+                        <button class="btn-text text-blue mt-2" onclick="setPrompt('Start learning robotics')">Start
+                            Learning &rarr;</button>
+                    </div>
+                </div>
+
+                <div class="feature-card glass-panel">
+                    <div class="feature-icon orange">
+                        <i data-lucide="folder-kanban"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4>Smart Project Suggestions</h4>
+                        <p>Find projects based on your level, budget, and goals.</p>
+                        <button class="btn-text text-orange mt-2" onclick="setPrompt('Find projects for my level')">Find
+                            Projects &rarr;</button>
+                    </div>
+                </div>
+
+                <div class="feature-card glass-panel">
+                    <div class="feature-icon cyan">
+                        <i data-lucide="braces"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4>Code Help</h4>
+                        <p>Fix bugs, understand logic, and get coding guidance.</p>
+                        <button class="btn-text text-cyan mt-2" onclick="setPrompt('Help me fix my code')">Fix My Code
+                            &rarr;</button>
+                    </div>
+                </div>
+
+                <div class="feature-card glass-panel">
+                    <div class="feature-icon purple">
+                        <i data-lucide="memory-stick"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4>Components Guide</h4>
+                        <p>Pick sensors, motors, boards, batteries and drivers.</p>
+                        <button class="btn-text text-purple mt-2"
+                            onclick="setPrompt('Choose components for a robot')">Choose Components &rarr;</button>
+                    </div>
+                </div>
+
+                <div class="feature-card glass-panel">
+                    <div class="feature-icon green">
+                        <i data-lucide="plug-zap"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4>Circuit & Wiring Help</h4>
+                        <p>Pin connection, power safety, and hardware setup.</p>
+                        <button class="btn-text text-green mt-2" onclick="setPrompt('Need circuit wiring help')">Open
+                            Circuit Help &rarr;</button>
+                    </div>
+                </div>
+
+                <div class="feature-card glass-panel">
+                    <div class="feature-icon cyan">
+                        <i data-lucide="bot"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4>Humanoid Robotics</h4>
+                        <p>DOF, movement, balance, arm control and kinematics.</p>
+                        <button class="btn-text text-cyan mt-2" onclick="setPrompt('Teach me humanoid robotics')">Open
+                            Humanoid Help &rarr;</button>
+                    </div>
+                </div>
+
+                <div class="feature-card glass-panel">
+                    <div class="feature-icon blue">
+                        <i data-lucide="route"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4>Roadmap Generator</h4>
+                        <p>Create your personalized AI & Robotics learning path.</p>
+                        <button class="btn-text text-blue mt-2"
+                            onclick="setPrompt('Generate a learning roadmap')">Generate Roadmap &rarr;</button>
+                    </div>
+                </div>
+
+                <div class="feature-card glass-panel">
+                    <div class="feature-icon purple">
+                        <i data-lucide="clipboard-list"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4>Quiz & Test Prep</h4>
+                        <p>Practice MCQs, viva questions, and concept revision.</p>
+                        <button class="btn-text text-purple mt-2" onclick="setPrompt('Start a quiz on robotics')">Start
+                            Quiz &rarr;</button>
+                    </div>
+                </div>
+
+                <div class="feature-card glass-panel challenge-special">
+                    <div class="feature-icon green">
+                        <i data-lucide="target"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="text-green">Today's Challenge</h4>
+                        <p>Improve with one daily robotics task.</p>
+                        <button class="btn btn-outline-green mt-2 glow-btn-green"
+                            onclick="setPrompt('Give me today&apos;s challenge')">Try Challenge</button>
+                    </div>
+                </div>
+
+            </section>
+
+            <div class="mb-120"></div>
+        </main> <!-- End Scrollable -->
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav glass-panel">
+            <a href="home.html" class="nav-item">
+                <i data-lucide="home"></i>
+                <span>Home</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i data-lucide="book-open"></i>
+                <span>Learn</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i data-lucide="folder-grid"></i>
+                <span>Projects</span>
+            </a>
+            <a href="robogenie.html" class="nav-item active AI-tab">
+                <i data-lucide="bot" class="AI-icon"></i>
+                <span>RoboGenie</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i data-lucide="user"></i>
+                <span>Profile</span>
+            </a>
+        </nav>
+
+    </div>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+    <script src="robogenie.js"></script>
+</body>
+
+</html>
