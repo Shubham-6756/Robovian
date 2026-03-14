@@ -4,140 +4,513 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robovian - Login</title>
+    <title>Robovian - The Future of Robotics Learning</title>
     <meta name="description"
-        content="Login to RoboTech to access your robotics projects, simulations, learning tools, and AI systems.">
+        content="Robovian is a modern AI and Robotics learning platform that helps users explore concepts, projects, coding, circuits, components, and humanoid systems through an intelligent assistant called RoboGenie.">
+    <!-- Google Fonts: Inter, Orbitron, Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Orbitron:wght@700;800&family=Poppins:wght@400;500;600;700&display=swap"
         rel="stylesheet">
+    <!-- Main Stylesheet -->
     <link rel="stylesheet" href="style.css">
+    <!-- Icons (Lucide) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
-    <div class="background-container">
-        <div class="glowing-orb orb-1"></div>
-        <div class="glowing-orb orb-2"></div>
-        <div class="grid-overlay"></div>
-    </div>
-
-    <main class="login-container">
-        <div class="login-card">
-            <div class="brand-section">
-                <div class="logo-icon">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="url(#paint0_linear)" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" />
-                        <path d="M2 17L12 22L22 17" stroke="url(#paint1_linear)" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                        <path d="M2 12L12 17L22 12" stroke="url(#paint2_linear)" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                        <defs>
-                            <linearGradient id="paint0_linear" x1="12" y1="2" x2="12" y2="12"
-                                gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#00F0FF" />
-                                <stop offset="1" stop-color="#0057FF" />
-                            </linearGradient>
-                            <linearGradient id="paint1_linear" x1="12" y1="17" x2="12" y2="22"
-                                gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#00F0FF" />
-                                <stop offset="1" stop-color="#0057FF" />
-                            </linearGradient>
-                            <linearGradient id="paint2_linear" x1="12" y1="12" x2="12" y2="17"
-                                gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#00F0FF" />
-                                <stop offset="1" stop-color="#0057FF" />
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                </div>
-                <h1 class="app-name">Robovian</h1>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="assets/robovian_logo.png" alt="Robovian Logo" class="logo-img">
+                <span class="logo-text">Robovian</span>
             </div>
-
-            <div class="header-section">
-                <h2 class="heading">Welcome Back</h2>
-                <p class="subheading">Login to access your robotics projects, simulations, learning tools, and AI
-                    systems.</p>
+            <div class="nav-links">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#robogenie" class="nav-link">RoboGenie</a>
+                <a href="#vision" class="nav-link">Vision</a>
             </div>
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="login.html" class="btn btn-primary">Start Learning</a>
+            </div>
+            <!-- Mobile Menu Toggle -->
+            <button class="menu-toggle" aria-label="Toggle Menu">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
 
-            <form id="login-form">
-                <div class="input-group">
-                    <label for="fullname" class="visually-hidden">Full Name</label>
-                    <div class="input-wrapper">
-                        <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="12" cy="7" r="4"></circle>
-                        </svg>
-                        <input type="text" id="fullname" placeholder="Enter your full name" required
-                            autocomplete="name">
-                        <div class="input-focus-border"></div>
+    <!-- 1. Hero Section -->
+    <section class="hero-section" id="hero">
+        <!-- Abstract Background -->
+        <div class="hero-bg">
+            <div class="glow-orb primary"></div>
+            <div class="glow-orb accent"></div>
+            <div class="grid-overlay"></div>
+        </div>
+
+        <div class="hero-content">
+            <span class="badge">Powered by RoboGenie</span>
+            <h1 class="hero-title">
+                <span class="gradient-text">Learn AI and Robotics</span><br>
+                with RoboGenie
+            </h1>
+            <p class="hero-subtitle">
+                Robovian is a smart learning platform built for students, beginners, and future robotics engineers who
+                want to explore AI, robotics, coding, circuits, components, projects, and humanoid systems in one place.
+            </p>
+            <div class="hero-cta">
+                <a href="login.html" class="btn btn-primary btn-lg glow">
+                    Get Started <i data-lucide="arrow-right"></i>
+                </a>
+                <a href="robogenie.html" class="btn btn-outline btn-lg">
+                    <i data-lucide="bot"></i> Talk to RoboGenie
+                </a>
+            </div>
+            <p class="tagline">Build. Learn. Control.</p>
+        </div>
+    </section>
+
+    <!-- 2. About Section -->
+    <section class="about-section" id="about">
+        <div class="container glass-panel">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2 class="section-title">What is Robovian?</h2>
+                    <p class="section-description">
+                        Robovian is an AI and Robotics learning app designed to make technical learning simple, practical,
+                        and student-friendly. It combines guided learning, project discovery, coding help, circuit
+                        understanding, hardware guidance, and intelligent support through RoboGenie, the built-in AI
+                        assistant.
+                    </p>
+                    <p class="section-description">
+                        Robovian is not just an app for reading concepts. It is a platform where students can learn, ask
+                        questions, discover projects, solve doubts, and grow step by step from beginner level to
+                        advanced robotics understanding.
+                    </p>
+                    <div class="stats-row">
+                        <div class="stat-item">
+                            <span class="stat-number">100+</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">AI Mentor</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Learning Tracks</span>
+                        </div>
                     </div>
                 </div>
-
-                <div class="input-group">
-                    <label for="email" class="visually-hidden">Email</label>
-                    <div class="input-wrapper">
-                        <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
-                            </path>
-                            <polyline points="22,6 12,13 2,6"></polyline>
-                        </svg>
-                        <input type="email" id="email" placeholder="Enter your email" required autocomplete="email">
-                        <div class="input-focus-border"></div>
+                <div class="about-image">
+                    <!-- Placeholder for App Illustration/Dashboard -->
+                    <div class="floating-element float-1">
+                        <i data-lucide="cpu" class="text-primary"></i>
                     </div>
-                </div>
-
-                <div class="input-group">
-                    <label for="password" class="visually-hidden">Password</label>
-                    <div class="input-wrapper">
-                        <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                        </svg>
-                        <input type="password" id="password" placeholder="Enter your password" required
-                            autocomplete="current-password">
-                        <div class="input-focus-border"></div>
-                        <button type="button" id="toggle-password" class="toggle-password-btn"
-                            aria-label="Toggle password visibility">
-                            <svg class="eye-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                                <circle cx="12" cy="12" r="3"></circle>
-                            </svg>
-                        </button>
+                    <div class="floating-element float-2">
+                        <i data-lucide="terminal" class="text-accent"></i>
                     </div>
+                    <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2670&auto=format&fit=crop"
+                        alt="Robotics Learning" class="rounded-image">
                 </div>
-
-                <div class="options-row">
-                    <label class="checkbox-container">
-                        <input type="checkbox" id="remember-me">
-                        <span class="checkmark">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                        </span>
-                        <span class="checkbox-text">Remember me</span>
-                    </label>
-                    <a href="#" class="forgot-password">Forgot Password?</a>
-                </div>
-
-                <button type="submit" class="primary-btn">
-                    <span class="btn-text">Login</span>
-                    <div class="btn-glow"></div>
-                </button>
-            </form>
-
-            <div class="bottom-section">
-                <p class="bottom-line">Don't have an account? <a href="#" class="action-text">Sign Up</a></p>
             </div>
         </div>
-    </main>
-    <script src="script.js"></script>
+    </section>
+
+    <!-- 3. RoboGenie Section -->
+    <section class="robogenie-section" id="robogenie">
+        <div class="container">
+            <div class="section-header text-center">
+                <div class="icon-avatar pulse">
+                    <img src="assets/robogenie_logo.png" alt="RoboGenie">
+                </div>
+                <h2 class="section-title">Meet RoboGenie</h2>
+                <p class="section-subtitle">Your Personal AI Robotics Mentor</p>
+            </div>
+
+            <div class="robogenie-layout">
+                <div class="robogenie-content glass-panel">
+                    <p class="large-text">
+                        RoboGenie is the heart of Robovian. It is an AI assistant created specially for AI and Robotics
+                        learning. Users can ask questions, get guided answers, explore project ideas, understand coding
+                        logic, learn circuits, choose components, and build a clear roadmap for their robotics journey.
+                    </p>
+                    <p>
+                        RoboGenie helps make difficult topics easier by giving simple, useful, and focused guidance for
+                        students.
+                    </p>
+
+                    <h3 class="subsection-title mt-4">Key Highlights:</h3>
+                    <ul class="feature-list">
+                        <li><i data-lucide="check-circle" class="text-primary"></i> Ask questions about AI and Robotics
+                        </li>
+                        <li><i data-lucide="check-circle" class="text-primary"></i> Get project suggestions based on level
+                        </li>
+                        <li><i data-lucide="check-circle" class="text-primary"></i> Understand coding and logic</li>
+                        <li><i data-lucide="check-circle" class="text-primary"></i> Learn circuits and hardware basics</li>
+                        <li><i data-lucide="check-circle" class="text-primary"></i> Explore humanoid robotics support</li>
+                        <li><i data-lucide="check-circle" class="text-primary"></i> Generate learning roadmaps</li>
+                        <li><i data-lucide="check-circle" class="text-primary"></i> Practice with quizzes and daily
+                            challenges</li>
+                    </ul>
+
+                    <div class="mt-6">
+                        <a href="robogenie.html" class="btn btn-accent glow">
+                            <i data-lucide="message-square"></i> Start with RoboGenie
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Features Section -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Main Features of Robovian</h2>
+                <p class="section-subtitle">Everything you need to master electronics, coding, and robotics.</p>
+            </div>
+
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card glass-panel group hover-effect">
+                    <div class="feature-icon blue">
+                        <i data-lucide="book-open"></i>
+                    </div>
+                    <h3 class="feature-title">Learn AI & Robotics</h3>
+                    <p class="feature-text">Start from the basics of robotics, electronics, coding, and AI, then move
+                        toward advanced concepts like computer vision, control systems, and humanoid robotics.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card glass-panel group hover-effect">
+                    <div class="feature-icon cyan">
+                        <i data-lucide="lightbulb"></i>
+                    </div>
+                    <h3 class="feature-title">Smart Project Suggestions</h3>
+                    <p class="feature-text">Discover beginner, intermediate, and advanced robotics projects based on
+                        your level, interests, and learning goals.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card glass-panel group hover-effect">
+                    <div class="feature-icon purple">
+                        <i data-lucide="code"></i>
+                    </div>
+                    <h3 class="feature-title">Code Help</h3>
+                    <p class="feature-text">Get support for understanding code, fixing logic problems, learning syntax,
+                        and improving project programs.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card glass-panel group hover-effect">
+                    <div class="feature-icon orange">
+                        <i data-lucide="git-branch"></i>
+                    </div>
+                    <h3 class="feature-title">Circuit Guidance</h3>
+                    <p class="feature-text">Learn hardware connections, wiring, module interfacing, and practical setup
+                        basics in a student-friendly way.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-card glass-panel group hover-effect">
+                    <div class="feature-icon green">
+                        <i data-lucide="cpu"></i>
+                    </div>
+                    <h3 class="feature-title">Components Guide</h3>
+                    <p class="feature-text">Choose the right sensors, motors, controllers, batteries, and modules for
+                        your robot projects.</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-card glass-panel group hover-effect">
+                    <div class="feature-icon red">
+                        <i data-lucide="users"></i>
+                    </div>
+                    <h3 class="feature-title">Humanoid Robotics Support</h3>
+                    <p class="feature-text">Explore joints, degrees of freedom, movement logic, balance basics, and
+                        humanoid project guidance.</p>
+                </div>
+
+                <!-- Feature 7 -->
+                <div class="feature-card glass-panel group hover-effect">
+                    <div class="feature-icon indigo">
+                        <i data-lucide="map"></i>
+                    </div>
+                    <h3 class="feature-title">Personalized Roadmaps</h3>
+                    <p class="feature-text">Create structured learning plans for 1 month, 3 months, 6 months, or longer
+                        depending on your goal.</p>
+                </div>
+
+                <!-- Feature 8 -->
+                <div class="feature-card glass-panel group hover-effect">
+                    <div class="feature-icon yellow">
+                        <i data-lucide="target"></i>
+                    </div>
+                    <h3 class="feature-title">Daily Challenges</h3>
+                    <p class="feature-text">Stay active with small daily robotics, electronics, coding, and AI learning
+                        tasks.</p>
+                </div>
+
+                <!-- Feature 9 -->
+                <div class="feature-card glass-panel group hover-effect">
+                    <div class="feature-icon pink">
+                        <i data-lucide="check-square"></i>
+                    </div>
+                    <h3 class="feature-title">Quiz and Revision Support</h3>
+                    <p class="feature-text">Practice important concepts using quick questions, revision tasks, and
+                        topic-based tests.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Why Robovian Section -->
+    <section class="why-section" id="why-choose-us">
+        <div class="container">
+            <div class="split-layout">
+                <div class="content-side">
+                    <h2 class="section-title">Why Choose Robovian?</h2>
+                    <p class="section-description">
+                        Many students struggle because AI and Robotics learning is often scattered across different
+                        platforms, videos, notes, and project sources. Robovian brings everything together in one clean and
+                        smart platform.
+                    </p>
+                    <p class="section-description">
+                        With Robovian, students do not only read theory. They also get support for projects, practical
+                        understanding, coding help, component selection, and guided AI assistance through RoboGenie.
+                        This makes learning faster, clearer, and more practical.
+                    </p>
+
+                    <div class="reasons-list mt-6">
+                        <div class="reason-item">
+                            <div class="reason-icon"><i data-lucide="check"></i></div>
+                            <span>Student-friendly learning experience</span>
+                        </div>
+                        <div class="reason-item">
+                            <div class="reason-icon"><i data-lucide="check"></i></div>
+                            <span>Focus on practical robotics growth</span>
+                        </div>
+                        <div class="reason-item">
+                            <div class="reason-icon"><i data-lucide="check"></i></div>
+                            <span>AI-powered guidance through RoboGenie</span>
+                        </div>
+                        <div class="reason-item">
+                            <div class="reason-icon"><i data-lucide="check"></i></div>
+                            <span>Project-based approach</span>
+                        </div>
+                        <div class="reason-item">
+                            <div class="reason-icon"><i data-lucide="check"></i></div>
+                            <span>Beginner to advanced learning path</span>
+                        </div>
+                        <div class="reason-item">
+                            <div class="reason-icon"><i data-lucide="check"></i></div>
+                            <span>Modern and futuristic user experience</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-side">
+                    <div class="tech-card glass-panel">
+                        <h4 class="tech-title">From scattered notes...</h4>
+                        <div class="scattered-icons">
+                            <i data-lucide="youtube" class="text-red"></i>
+                            <i data-lucide="file-text" class="text-blue"></i>
+                            <i data-lucide="link" class="text-gray"></i>
+                            <i data-lucide="book" class="text-green"></i>
+                        </div>
+                        <div class="arrow-down"><i data-lucide="arrow-down"></i></div>
+                        <h4 class="tech-title text-primary">...To ONE smart platform</h4>
+                        <div class="central-icon glow center mx-auto mt-2">
+                            <img src="assets/robovian_logo.png" alt="Robovian" style="width: 60px; height: 60px; border-radius: 12px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6 & 7 & 8 & 9. App Experience (Combined screens) -->
+    <section class="app-experience" id="experience">
+        <div class="container text-center">
+            <h2 class="section-title">Everything You Need in One App</h2>
+            <p class="section-subtitle max-w-2xl mx-auto">Robovian is designed to give users a complete AI and Robotics
+                experience through multiple smart sections. Each section is built to support learning, exploration,
+                problem-solving, and progress tracking.</p>
+
+            <div class="screens-showcase mt-10">
+                <!-- Home Screen Tab -->
+                <div class="screen-feature glass-panel active">
+                    <div class="screen-icon"><i data-lucide="home"></i></div>
+                    <h3>Home Screen</h3>
+                    <p>A smart home for robotics learning. Get instant access to learning tools, featured projects,
+                        daily challenges, categories, progress, and RoboGenie. Modern, futuristic, and useful.</p>
+                </div>
+                
+                <!-- Learn Screen Tab -->
+                <div class="screen-feature glass-panel">
+                    <div class="screen-icon"><i data-lucide="book-open"></i></div>
+                    <h3>Learn Section</h3>
+                    <p>Structured learning for future builders. Build a strong base from fundamentals (Python, Arduino)
+                        to advanced topics (Computer Vision, AI integration). Organized and less confusing.</p>
+                </div>
+
+                <!-- Projects Screen Tab -->
+                <div class="screen-feature glass-panel">
+                    <div class="screen-icon"><i data-lucide="folder-grid"></i></div>
+                    <h3>Projects Section</h3>
+                    <p>Discover projects that match your level. Explore Arduino, AI, embedded systems, sensors, and
+                        humanoid robotics. Move from theory into hands-on building effortlessly.</p>
+                </div>
+
+                <!-- RoboGenie Screen Tab -->
+                <div class="screen-feature glass-panel">
+                    <div class="screen-icon"><i data-lucide="bot"></i></div>
+                    <h3>RoboGenie AI</h3>
+                    <p>Your intelligent robotics companion ready to answer questions, guide your projects, and craft
+                        personalized learning roadmaps 24/7.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Student Section -->
+    <section class="student-section">
+        <div class="container container-sm text-center">
+            <div class="glass-banner">
+                <div class="banner-icon"><i data-lucide="graduation-cap"></i></div>
+                <h2 class="section-title">Built for Students and Future Robotics Engineers</h2>
+                <p class="section-description mt-4">
+                    Robovian is specially designed for students who want to start small and grow big. Whether someone is
+                    learning Arduino for the first time, exploring Python for robotics, building mini projects, or dreaming
+                    of humanoid robotics, Robovian supports that full journey.
+                </p>
+                <p class="highlight-text mt-4">It is made for learners who want practical progress, not confusion.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11 & 12. Vision & Future Scope -->
+    <section class="vision-section" id="vision">
+        <div class="container">
+            <div class="grid-2-cols">
+                <!-- Vision -->
+                <div class="vision-card glass-panel">
+                    <div class="card-header">
+                        <i data-lucide="eye" class="text-primary"></i>
+                        <h3>Our Vision</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            The vision of Robovian is to become a complete AI-powered robotics companion for students. The
+                            goal is to make robotics education more accessible, practical, and intelligent through one
+                            platform that supports learning, building, asking, and growing.
+                        </p>
+                        <p class="mt-4 font-semibold text-white">
+                            Robovian aims to help users become confident creators, thinkers, and builders in the world of AI
+                            and Robotics.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Future Scope -->
+                <div class="future-card glass-panel">
+                    <div class="card-header">
+                        <i data-lucide="rocket" class="text-accent"></i>
+                        <h3>What's Coming Next</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="mb-4">Robovian is designed to grow with the learner. Future ideas include:</p>
+                        <ul class="future-list">
+                            <li><i data-lucide="mic"></i> Voice interaction with RoboGenie</li>
+                            <li><i data-lucide="sparkles"></i> Smarter personalized recommendations</li>
+                            <li><i data-lucide="activity"></i> Advanced humanoid learning tools</li>
+                            <li><i data-lucide="calendar"></i> Better project planning support</li>
+                            <li><i data-lucide="eye"></i> Visual circuit guidance</li>
+                            <li><i data-lucide="github"></i> GitHub project integration</li>
+                            <li><i data-lucide="trending-up"></i> Progress-based custom learning paths</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 13. Call to Action -->
+    <section class="cta-section">
+        <div class="container text-center">
+            <div class="cta-box glass-panel glow-border">
+                <h2 class="cta-title">Start Your Robotics Journey Today</h2>
+                <p class="cta-subtitle">Learn smarter, build better, and grow with RoboGenie by your side.</p>
+                <p class="tagline-large">Your Robotics Journey Starts Here.</p>
+                <div class="cta-buttons mt-8">
+                    <a href="login.html" class="btn btn-primary btn-lg glow">
+                        Launch Robovian
+                    </a>
+                    <a href="#features" class="btn btn-outline btn-lg">
+                        Explore Features
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 14. Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="assets/robovian_logo.png" alt="Robovian" class="logo-img">
+                        <span class="logo-text">Robovian</span>
+                    </div>
+                    <p class="footer-tagline mt-4">Robovian — Your AI-powered robotics learning companion.</p>
+                    <p class="footer-extra">Built for students, builders, and future innovators in AI and Robotics.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Platform</h4>
+                        <a href="home.html">App Home</a>
+                        <a href="#">Learn</a>
+                        <a href="#">Projects</a>
+                        <a href="robogenie.html">RoboGenie</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Company</h4>
+                        <a href="#about">About</a>
+                        <a href="#vision">Vision</a>
+                        <a href="#">Contact</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Robovian. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                    <a href="#" aria-label="GitHub"><i data-lucide="github"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+        
+        // Simple script for mobile menu
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+            document.querySelector('.nav-actions').classList.toggle('active');
+        });
+    </script>
 </body>
 
 </html>
