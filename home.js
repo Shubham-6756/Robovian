@@ -25,6 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
             // Use just the first name for the greeting if it's long, or full if short
             const firstName = formattedName.split(' ')[0];
             userNameElement.textContent = firstName + '!';
+        } else {
+            userNameElement.textContent = 'User!';
         }
 
         // Load Profile Avatar specific to the user (Using DiceBear Bottts for Robot Theme)
@@ -416,6 +418,33 @@ document.addEventListener('DOMContentLoaded', () => {
                     window.location.href = 'projects.html';
                 }
             }
+        });
+    }
+
+    // Global Search Logic
+    const searchInput = document.querySelector('.search-box input');
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase().trim();
+            const allItemsToFilter = document.querySelectorAll('.grid-card, .project-card, .category-pill');
+
+            allItemsToFilter.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(query)) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            // Handle horizontal scroll containers hiding logic to look clean
+            const sectionContainers = document.querySelectorAll('.section-container');
+            sectionContainers.forEach(container => {
+                const visibleItems = Array.from(container.querySelectorAll('.grid-card, .project-card, .category-pill')).filter(el => el.style.display !== 'none');
+                
+                // If there are filterable items inside, but 0 are visible, optionally hide the section title 
+                // but let's just leave it simple for now so they know nothing was found in that category.
+            });
         });
     }
 });

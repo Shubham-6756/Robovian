@@ -1,9 +1,17 @@
 // Basic Javascript for RoboGenie Interactions
 
 function setPrompt(text) {
-    // Instead of filling the input here, we navigate to the chat page
-    // and pass the prompt via URL parameters so the chat page can auto-fill it.
     window.location.href = `robogenie-chat.html?prompt=${encodeURIComponent(text)}`;
+}
+
+function startChat() {
+    const aiInput = document.getElementById('ai-prompt-input');
+    const val = aiInput ? aiInput.value.trim() : '';
+    if (val) {
+        window.location.href = `robogenie-chat.html?prompt=${encodeURIComponent(val)}`;
+    } else {
+        window.location.href = `robogenie-chat.html`;
+    }
 }
 
 function switchTab(clickedTab, tabName) {

@@ -62,11 +62,16 @@ function appendAIMessage(textObj, buttonsArray) {
     let contentHTML = `<div class="structured-content">`;
 
     // Core text
-    contentHTML += `<p>${textObj.answer}</p>`;
+    contentHTML += `<p class="main-answer">${textObj.answer}</p>`;
+
+    // Extra details (Real-life example, Use cases)
+    if (textObj.extra) {
+        contentHTML += `<div class="extra-info mt-3">${textObj.extra}</div>`;
+    }
 
     // Uses cases / bullets if present
     if (textObj.bullets && textObj.bullets.length > 0) {
-        contentHTML += `<ul>`;
+        contentHTML += `<ul class="mt-2">`;
         textObj.bullets.forEach(b => {
             contentHTML += `<li>${b}</li>`;
         });
@@ -75,8 +80,10 @@ function appendAIMessage(textObj, buttonsArray) {
 
     // Next Step if present
     if (textObj.nextStep) {
-        contentHTML += `<div class="next-step-title">Next Step</div>`;
-        contentHTML += `<p class="text-sm mt-1 mb-2 text-muted">${textObj.nextStep}</p>`;
+        contentHTML += `<div class="next-step-box mt-3">`;
+        contentHTML += `<div class="next-step-title" style="font-size:11px; font-weight:700; color:var(--cyan); text-transform:uppercase; margin-bottom:4px;">Next Learning Step</div>`;
+        contentHTML += `<p class="text-xs text-muted" style="font-size:12px; line-height:1.4;">${textObj.nextStep}</p>`;
+        contentHTML += `</div>`;
     }
 
     contentHTML += `</div>`;
@@ -110,6 +117,71 @@ function showInputError() {
     }, 2000);
 }
 
+// Render Final AI Message with high-quality 5-part structure
+function appendAIMessage(textObj, buttonsArray) {
+    let contentHTML = `<div class="structured-content">`;
+
+    // 1. Meaning (Simple Language)
+    contentHTML += `<div class="content-section">
+        <div class="section-label">Simplified Meaning</div>
+        <p class="main-answer">${textObj.meaning || textObj.answer}</p>
+    </div>`;
+
+    // 2. How it works
+    if (textObj.working) {
+        contentHTML += `<div class="content-section mt-3">
+            <div class="section-label">How it Works</div>
+            <p class="text-xs text-main">${textObj.working}</p>
+        </div>`;
+    }
+
+    // 3. Real-life Use
+    if (textObj.usage) {
+        contentHTML += `<div class="content-section mt-3">
+            <div class="section-label">Real-life Usage</div>
+            <p class="text-xs text-main">${textObj.usage}</p>
+        </div>`;
+    }
+
+    // 4. Beginner Example
+    if (textObj.example) {
+        contentHTML += `<div class="content-section mt-3 highlight-box">
+            <div class="section-label" style="color:var(--cyan)">Beginner Example</div>
+            <p class="text-xs italic">${textObj.example}</p>
+        </div>`;
+    }
+
+    // 5. Next Learning Step
+    if (textObj.nextStep) {
+        contentHTML += `<div class="next-step-box mt-3">
+            <div class="next-step-title">NEXT LEARNING STEP</div>
+            <p class="text-xs text-muted">${textObj.nextStep}</p>
+        </div>`;
+    }
+
+    contentHTML += `</div>`;
+
+    // Smart Actions
+    if (buttonsArray && buttonsArray.length > 0) {
+        contentHTML += `<div class="smart-actions">`;
+        buttonsArray.forEach(btnText => {
+            contentHTML += `<button class="smart-btn" onclick="fillInput('${btnText}')">${btnText}</button>`;
+        });
+        contentHTML += `</div>`;
+    }
+
+    const msgHTML = `
+        <div class="message-group ai-message-group">
+            <img src="assets/robogenie_logo.png" class="chat-avatar" alt="AI">
+            <div class="message-bubble ai-bubble glass-panel highlight-border">
+                ${contentHTML}
+            </div>
+        </div>
+    `;
+    chatMessages.insertAdjacentHTML('beforeend', msgHTML);
+    scrollToBottom();
+}
+
 // Core Chat Flow
 function handleSend() {
     const text = chatInput.value.trim();
@@ -125,52 +197,49 @@ function handleSend() {
     // 2. Show Loading
     const loadingId = appendLoadingState();
 
-    // 3. Simulate Backend Request
-    const lowerText = text.toLowerCase();
-
+    // 3. Simulated Intelligence from robogenie-data.js
     setTimeout(() => {
-        // Remove loading state
-        document.getElementById(loadingId).remove();
+        const loadingEl = document.getElementById(loadingId);
+        if (loadingEl) loadingEl.remove();
+        
+        const lowerText = text.toLowerCase();
+        let matchedKey = null;
 
-        // Hardcoded simulation responses based on prompt
-        if (lowerText.includes('humanoid')) {
-            appendAIMessage({
-                answer: 'Humanoid robot ek aisa robot hota hai jo human body structure se inspired hota hai. Isme head, arms, legs, joints aur movement system ho sakta hai. Iska use research, assistance, automation aur interaction me hota hai.',
-            }, ['Explain More', 'Show Examples', 'Give Project Idea', 'Start Learning']);
-
-        } else if (lowerText.includes('arduino')) {
-            appendAIMessage({
-                answer: 'Arduino ek microcontroller board hai jo electronics aur robotics projects me use hota hai.',
-                bullets: ['LED blinking', 'Sensor reading', 'Motor control', 'Robot projects'],
-                nextStep: 'Do you want beginner Arduino projects or basic components list?'
-            }, ['Beginner Projects', 'Components List', 'Explain More']);
-
-        } else if (lowerText.includes('line follower')) {
-            appendAIMessage({
-                answer: 'Line follower robot banane ke liye Arduino, IR sensors, motor driver, DC motors, chassis, aur battery chahiye. Main aapko components, wiring, aur basic working step-by-step samjha sakta hoon.'
-            }, ['Show Components', 'Show Wiring', 'Give Example Code']);
-
-        } else {
-            // Error fallback simulation / default
-            appendAIMessage({
-                answer: "I couldn't find a specific answer for that right now, but I'm ready to help you with electronics, coding, and AI.",
-                nextStep: "Try one of these topics:"
-            }, ['Arduino Basics', 'Sensor Wiring', 'Robot Chassis']);
+        // Smart keyword search in massive KB
+        for (const key in robogenieKB) {
+            if (lowerText.includes(key.toLowerCase())) {
+                matchedKey = key;
+                break;
+            }
         }
 
-    }, 1500); // 1.5s simulated delay
+        if (matchedKey) {
+            const data = robogenieKB[matchedKey];
+            appendAIMessage(data, ['Explain More', 'Next Topic', 'Show Code']);
+        } else {
+            // Smart Fallback behavior using external fallbacks array
+            const fallbackMsg = robogenieFallbacks[Math.floor(Math.random() * robogenieFallbacks.length)];
+            appendAIMessage({
+                meaning: fallbackMsg,
+                usage: "I can explain electronics, sensors, and coding basics to help you get started.",
+                nextStep: "Try asking about 'Arduino' or 'Voltage' for a quick start."
+            }, ['Arduino Basics', 'Sensor Wiring', 'Robot Projects']);
+        }
+
+    }, 1500);
 }
 
-// Check for URL prompt parameters on load
+// Check for URL parameters on load
 document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
     const initialPrompt = urlParams.get('prompt');
+    const context = urlParams.get('context');
 
     if (initialPrompt) {
-        // Auto-fill and optional auto-send
         chatInput.value = initialPrompt;
-
-        // Optional: auto-send if desired, by uncommenting below
+    } else if (context) {
+        chatInput.value = `Explain this to me: ${decodeURIComponent(context)}`;
+        // Optional: auto-send
         // handleSend();
     }
 });
